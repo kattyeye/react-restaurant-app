@@ -1,5 +1,8 @@
 function MenuList(props) {
   const menuItems = props.menuItems;
+
+  //   menuItems.map((item) => item.price).reduce((prev, next) => prev + next);
+
   return (
     <div>
       {menuItems.map((item) => {
@@ -10,18 +13,24 @@ function MenuList(props) {
             </div>
             <div className="menu-text">
               <h2> {item.name}</h2>
+
               {item.menuItems.map((childItem) => {
                 return (
                   <div key={item.id}>
                     <h4>{childItem.name}</h4>
                     <p>{childItem.description}</p>
-                    <p>${childItem.price.toString()}</p>
+                    <p>${childItem.price.toString()} </p>
+
                     <button
                       onClick={() => {
                         props.setOrder([
                           ...props.order,
                           { name: childItem.name, price: childItem.price },
                         ]);
+                        console.log({
+                          name: childItem.name,
+                          price: childItem.price,
+                        });
                       }}
                     >
                       Add to Order

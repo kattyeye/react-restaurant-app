@@ -1,6 +1,10 @@
 .nav-bar {
   max-width: 1200px;
 }
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+}
 .menu-container {
   display: flex;
   flex-direction: row;
@@ -18,4 +22,9 @@
 }
 .menu-text {
   width: 50%;
+}
+.order-display {
+  background-color: lightgray;
+  padding: 50px;
+  display: inline-block;
 }
