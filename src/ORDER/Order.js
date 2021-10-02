@@ -2,7 +2,7 @@ import { useState } from "react";
 import formatPrice from "../UTILITIES/formatPrice";
 
 function Order(props) {
-  const orderHTML = props.order.map((item) => {
+  const orderHTML = props.order.items.map((item) => {
     return (
       <div style={{}}>
         <div>
@@ -15,7 +15,6 @@ function Order(props) {
 
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [newOrder, setNewOrder] = useState(props.order);
   function handleSubmit(e) {
     e.preventDefault();
     props.addOrder(props.order, name, phoneNumber);
@@ -32,7 +31,7 @@ function Order(props) {
 
   function subtotal() {
     let total = 0;
-    props.order.forEach((item) => {
+    props.order.items.forEach((item) => {
       total = total + item.price;
     });
     console.log({ total });
