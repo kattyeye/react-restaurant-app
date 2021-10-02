@@ -22,15 +22,21 @@ function App() {
     });
 
     if (response.ok) {
-      const data = await response.json();
-      setOrder([...order, data]);
+      setSelection("successScreen");
     }
   }
 
   let html;
 
   if (selection === "menuScreen") {
-    html = <MenuList menuItems={menuItems} order={order} setOrder={setOrder} />;
+    html = (
+      <MenuList
+        menuItems={menuItems}
+        order={order}
+        setOrder={setOrder}
+        addOrder={addOrder}
+      />
+    );
   } else if (selection === "orderScreen") {
     html = <Order order={order} setOrder={setOrder} addOrder={addOrder} />; // this is where the order state is being passed to Order comp.
     {
@@ -44,6 +50,8 @@ function App() {
           );
         });
     }
+  } else if (selection === "successScreen") {
+    html = <div>Success! Your order has been placed!</div>;
   }
 
   {
@@ -91,20 +99,7 @@ function App() {
           </li>
         </ul>
       </nav>
-      <main>
-        {html}
-
-        {/* {order &&
-          order.map((item) => {
-            return (
-              <div>
-                <p>{item.name}</p>
-                <p>${item.price.toString()}</p>
-              </div>
-            );
-          })} */}
-      </main>
-      <form></form>
+      <main>{html}</main>
     </div>
   );
 }

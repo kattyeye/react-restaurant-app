@@ -7,35 +7,35 @@ const menuItems = [
         name: "Pepperoni Pizza",
         description:
           "Pepperoni, our signature Old World Pepperoni®, romesan seasoning, our original sauce and signature three cheeses",
-        price: 10,
+        price: 1000,
       },
 
       {
         id: "cheesePizza",
         name: "Cheese Pizza",
         description: "Our signature five cheese blend and our original sauce.",
-        price: 10,
+        price: 1000,
       },
       {
         id: "supremePizza",
         name: "Supreme Pizza",
         description:
           "Pepperoni, Italian sausage, mushrooms, green peppers, onions, our original sauce and signature three cheeses",
-        price: 10,
+        price: 1000,
       },
       {
         id: "veggiePizza",
         name: "Veggie Pizza",
         description:
           "Mushrooms, black olives, onions, sliced tomatoes, our original sauce and signature three cheeses, plus feta",
-        price: 10,
+        price: 1000,
       },
       {
         id: "hawaiianPizza",
         name: "Hawaiian Pizza",
         description:
           "Ham, pineapple, our original sauce and signature three cheeses",
-        price: 10,
+        price: 1000,
       },
     ],
     sectionImage: {
@@ -51,7 +51,7 @@ const menuItems = [
         name: "Cinnamon Sticks",
         description:
           "Fresh-baked, buttery pastry topped with cinnamon and sugar, served with a side of vanilla icing",
-        price: 8,
+        price: 800,
       },
 
       {
@@ -59,7 +59,7 @@ const menuItems = [
         name: "Cannoli (2)",
         description:
           "Made in house fresh with a blend of ricotta and mascarpone cheese. ",
-        price: 4,
+        price: 400,
       },
     ],
     sectionImage: {
@@ -76,13 +76,13 @@ const menuItems = [
         name: "Like a Salad",
         description:
           "Fresh-cut lettuce blend, cheddar cheese, black olives, onions, green peppers, sliced tomatoes and croutons",
-        price: 6,
+        price: 600,
       },
       {
         id: "caesarSalad",
         name: "Caesar Salad",
         description: "Fresh-cut lettuce blend, parmesan cheese and croutons",
-        price: 6,
+        price: 600,
       },
     ],
     sectionImage: {
@@ -98,14 +98,14 @@ const menuItems = [
         id: "fountainDrink",
         name: "Fountain Drink",
         description: "Kat's All Natural Small Batch Sodas",
-        price: 2,
+        price: 200,
       },
       {
         id: "beer",
         name: "Beer",
         description:
           "Local IPA made with the finest hops. Ask for a draft list.",
-        price: 4,
+        price: 400,
       },
     ],
     sectionImage: {

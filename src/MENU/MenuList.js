@@ -1,3 +1,5 @@
+import formatPrice from "../UTILITIES/formatPrice";
+
 function MenuList(props) {
   const menuItems = props.menuItems;
 
@@ -5,27 +7,30 @@ function MenuList(props) {
 
   return (
     <div>
-      {menuItems.map((item) => {
+      {menuItems.map((item, index) => {
         return (
-          <div key={item.name.toLowerCase()} className="menu-container">
+          <div key={index} className="menu-container">
             <div className="menu-images">
               <img src={item.sectionImage.path} alt={item.sectionImage.alt} />
             </div>
             <div className="menu-text">
               <h2> {item.name}</h2>
 
-              {item.menuItems.map((childItem) => {
+              {item.menuItems.map((childItem, childIndex) => {
                 return (
-                  <div key={item.id}>
+                  <div key={`${index} ${childIndex}`}>
                     <h4>{childItem.name}</h4>
                     <p>{childItem.description}</p>
-                    <p>${childItem.price.toString()} </p>
+                    <p>{formatPrice(childItem.price)} </p>
 
                     <button
                       onClick={() => {
                         props.setOrder([
                           ...props.order,
-                          { name: childItem.name, price: childItem.price },
+                          {
+                            name: childItem.name,
+                            price: childItem.price,
+                          },
                         ]);
                         console.log({
                           name: childItem.name,
