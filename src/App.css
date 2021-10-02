@@ -15,6 +15,14 @@
   width: 50%;
   height: 300px;
   object-fit: cover;
+  margin: 30px;
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+  }
 }
 .menu-images img {
   width: 100%;

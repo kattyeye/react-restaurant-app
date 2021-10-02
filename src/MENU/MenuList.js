@@ -14,7 +14,7 @@ function MenuList(props) {
               <img src={item.sectionImage.path} alt={item.sectionImage.alt} />
             </div>
             <div className="menu-text">
-              <h2> {item.name}</h2>
+              <h2>{item.name}</h2>
 
               {item.menuItems.map((childItem, childIndex) => {
                 return (
