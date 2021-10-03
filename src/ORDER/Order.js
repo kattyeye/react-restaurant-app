@@ -38,30 +38,36 @@ function Order(props) {
   }
 
   return (
-    <div className="order-display">
-      {orderHTML}
-      <p>Total: {formatPrice(subtotal())}</p>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <label>
-            <h4>Please enter you name and number to continue.</h4>
-          </label>
-          <input
-            name="name-input"
-            value={name}
-            onChange={handleNameChange}
-            type="text"
-            placeholder="name"
-          />
-          <input
-            name="phone-num-input"
-            value={phoneNumber}
-            onChange={handleNumChange}
-            type="tel"
-            placeholder="phone"
-          />
-          <button type="submit">Submit Order</button>
-        </form>
+    <div className="order-container">
+      {" "}
+      <div className="order-display">
+        <h3>Your order</h3>
+        {orderHTML}
+        <p>Total: {formatPrice(subtotal())}</p>
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <label>
+              <h4>Please enter your name and number to complete order.</h4>
+            </label>
+            <input
+              name="name-input"
+              value={name}
+              onChange={handleNameChange}
+              type="text"
+              placeholder="Name"
+            />
+            <input
+              name="phone-num-input"
+              value={phoneNumber}
+              onChange={handleNumChange}
+              type="tel"
+              placeholder="Phone"
+            />
+            <button className="submitbtn" type="submit">
+              Submit Order
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

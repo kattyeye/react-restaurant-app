@@ -1,16 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Montserrat&display=swap");
 * {
   box-sizing: border-box;
 }
 body {
-  font-family: "roboto";
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(white, #ffc9b4);
+}
+
+h1,
+h2 {
+  font-family: "Concert One", cursive;
+  text-transform: uppercase;
+  font-size: 50px;
+}
+h3 {
+  font-family: "Concert One", cursive;
+  text-transform: uppercase;
+  font-size: 35px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./pizzaheader.jpg);
+  height: 400px;
+  color: white;
+  font-size: 65px;
 }
 
 .nav-bar {
-  max-width: 1200px;
+  display: flex;
+  justify-content: center;
 }
 .nav-bar ul {
   list-style: none;
   display: flex;
+  padding: 0;
 }
 .menu-container {
   display: flex;
@@ -19,63 +45,51 @@ body {
   margin: 50px auto;
 }
 .menu-container h2 {
-  text-transform: uppercase;
   font-size: 40px;
 }
 
 .menu-images {
   width: 50%;
-  height: 380px;
-  object-fit: cover;
+  height: 400px;
   margin: 30px;
-  box-shadow: darkred -20px 20px;
+  box-shadow: rgb(212, 85, 85) -20px 20px;
 }
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
-  .menu-container {
-    display: flex;
-    flex-direction: column;
-    margin: 10px auto;
-  }
-}
+
 .menu-images img {
   width: 100%;
-  object-fit: cover;
+  height: 100%;
 }
 .menu-text {
   width: 50%;
 }
-.order-display {
-  background-color: lightgray;
-  padding: 50px;
-  display: inline-block;
-}
 
-.success-card {
-  background: white;
-  padding: 60px;
-  border-radius: 4px;
-  box-shadow: 0 2px 3px #c8d0d8;
-  display: inline-block;
-  margin: 0 auto;
+.form-container {
+  padding-top: 20px;
+}
+.form-container h4 {
+  color: darkred;
 }
 
 nav button {
-  font-family: "lato";
+  font-family: "Concert One", cursive;
+  font-size: 20px;
   font-weight: 900;
   padding: 12px 40px;
   background: none;
   color: darkred;
   border: none;
+  cursor: pointer;
 }
 
 nav button:hover {
-  text-decoration: underline;
-  text-decoration-color: rgb(212, 85, 85);
+  color: rgb(212, 85, 85);
 }
 
 .menu-item {
+  margin-bottom: 50px;
 }
-.addbutton {
+.addbutton,
+.submitbtn {
   background-color: darkred;
   color: white;
   padding: 12px 40px;
@@ -83,8 +97,77 @@ nav button:hover {
   border-radius: 50px;
   font-weight: 900;
   text-transform: uppercase;
+  cursor: pointer;
+  font-family: "Concert One", cursive;
 }
 
-.addbutton:hover {
+.addbutton:hover,
+.submitbtn:hover {
   background-color: rgb(212, 85, 85);
+}
+input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  margin-right: 5px;
+}
+.order-container {
+  display: flex;
+  justify-content: center;
+}
+.order-display {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  margin: 50px 0px 100px;
+  padding: 50px;
+  padding-bottom: 100px;
+  display: inline-block;
+}
+
+.success-card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.success-card {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  margin: 50px 0px 100px;
+  display: inline-block;
+  padding: 50px;
+}
+
+/* mobile styles  */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  body {
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  header {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+  .menu-text {
+    width: 100%;
+    text-align: center;
+  }
+  .menu-images {
+    width: auto;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: none;
+  }
 }

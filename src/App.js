@@ -71,10 +71,15 @@ function App() {
     }
   } else if (selection === "successScreen") {
     html = (
-      <div className="success-card">
+      <div className="success-card-container">
         {" "}
-        <h3>Thank you for your order! It will be ready for pickup shortly.</h3>
-        <h4>Payment upon pickup.</h4>
+        <div className="success-card">
+          {" "}
+          <h3>
+            Thank you for your order! It will be ready for pickup shortly.
+          </h3>
+          <h4>Payment upon pickup.</h4>
+        </div>
       </div>
     );
   }
@@ -109,7 +114,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Debbie's Pizza Palace</h1>
+      <header className="title">
+        <h1>Debbie's Pizza Palace</h1>
+      </header>
+
       <nav className="nav-bar">
         <ul>
           <li>
