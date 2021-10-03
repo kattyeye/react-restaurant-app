@@ -4,11 +4,9 @@ import formatPrice from "../UTILITIES/formatPrice";
 function Order(props) {
   const orderHTML = props.order.items.map((item) => {
     return (
-      <div style={{}}>
-        <div>
-          <h4>{item.name}</h4>
-          <p>{formatPrice(item.price)}</p>
-        </div>
+      <div>
+        <h4>{item.name}</h4>
+        <p>{formatPrice(item.price)}</p>
       </div>
     );
   });
@@ -41,9 +39,6 @@ function Order(props) {
 
   return (
     <div className="order-display">
-      {" "}
-      <h2>Thank you for your order! It will be ready for pickup shortly.</h2>
-      <h3>Payment upon pickup.</h3>
       {orderHTML}
       <p>Total: {formatPrice(subtotal())}</p>
       <div>

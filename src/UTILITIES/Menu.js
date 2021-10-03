@@ -44,6 +44,28 @@ const menuItems = [
     },
   },
   {
+    name: "Salads",
+    menuItems: [
+      {
+        id: "houseSalad",
+        name: "Like a Salad",
+        description:
+          "Fresh-cut lettuce blend, cheddar cheese, black olives, onions, green peppers, sliced tomatoes and croutons",
+        price: 600,
+      },
+      {
+        id: "caesarSalad",
+        name: "Caesar Salad",
+        description: "Fresh-cut lettuce blend, parmesan cheese and croutons",
+        price: 600,
+      },
+    ],
+    sectionImage: {
+      path: "./salad.jpg",
+      alt: "Salad with garnishes and balsamic vinegarette",
+    },
+  },
+  {
     name: "Desserts",
     menuItems: [
       {
@@ -69,29 +91,6 @@ const menuItems = [
   },
 
   {
-    name: "Salads",
-    menuItems: [
-      {
-        id: "houseSalad",
-        name: "Like a Salad",
-        description:
-          "Fresh-cut lettuce blend, cheddar cheese, black olives, onions, green peppers, sliced tomatoes and croutons",
-        price: 600,
-      },
-      {
-        id: "caesarSalad",
-        name: "Caesar Salad",
-        description: "Fresh-cut lettuce blend, parmesan cheese and croutons",
-        price: 600,
-      },
-    ],
-    sectionImage: {
-      path: "./salad.jpg",
-      alt: "Salad with garnishes and balsamic vinegarette",
-    },
-  },
-
-  {
     name: "Beverages",
     menuItems: [
       {
@@ -109,7 +108,7 @@ const menuItems = [
       },
     ],
     sectionImage: {
-      path: "./drink.jpg",
+      path: "./sodanew.jpg",
       alt: "Soda in a glass with lemon slice",
     },
   },

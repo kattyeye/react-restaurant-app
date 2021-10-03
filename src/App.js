@@ -70,7 +70,13 @@ function App() {
       });
     }
   } else if (selection === "successScreen") {
-    html = <div>Success! Your order has been placed!</div>;
+    html = (
+      <div className="success-card">
+        {" "}
+        <h3>Thank you for your order! It will be ready for pickup shortly.</h3>
+        <h4>Payment upon pickup.</h4>
+      </div>
+    );
   }
 
   {
