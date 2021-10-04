@@ -4,7 +4,7 @@
 }
 body {
   font-family: "Montserrat", sans-serif;
-  background: linear-gradient(white, #ffc9b4);
+  background: linear-gradient(white, #f78154);
 }
 
 h1,
@@ -32,6 +32,7 @@ h3 {
 .nav-bar {
   display: flex;
   justify-content: center;
+  background-color: #003844;
 }
 .nav-bar ul {
   list-style: none;
@@ -52,7 +53,7 @@ h3 {
   width: 50%;
   height: 400px;
   margin: 30px;
-  box-shadow: rgb(212, 85, 85) -20px 20px;
+  box-shadow: #eb5547 -20px 20px;
 }
 
 .menu-images img {
@@ -67,7 +68,7 @@ h3 {
   padding-top: 20px;
 }
 .form-container h4 {
-  color: darkred;
+  color: #003844;
 }
 
 nav button {
@@ -76,13 +77,13 @@ nav button {
   font-weight: 900;
   padding: 12px 40px;
   background: none;
-  color: darkred;
+  color: #f78154;
   border: none;
   cursor: pointer;
 }
 
 nav button:hover {
-  color: rgb(212, 85, 85);
+  color: #eb5547;
 }
 
 .menu-item {
@@ -90,7 +91,7 @@ nav button:hover {
 }
 .addbutton,
 .submitbtn {
-  background-color: darkred;
+  background-color: #003844;
   color: white;
   padding: 12px 40px;
   border: none;
@@ -103,7 +104,7 @@ nav button:hover {
 
 .addbutton:hover,
 .submitbtn:hover {
-  background-color: rgb(212, 85, 85);
+  background-color: #f78154;
 }
 input {
   background: none;

@@ -41,7 +41,7 @@ function Order(props) {
     <div className="order-container">
       {" "}
       <div className="order-display">
-        <h3>Your order</h3>
+        <h3>order details</h3>
         {orderHTML}
         <p>Total: {formatPrice(subtotal())}</p>
         <div className="form-container">
@@ -55,6 +55,7 @@ function Order(props) {
               onChange={handleNameChange}
               type="text"
               placeholder="Name"
+              style={{ fontFamily: "Montserrat" }}
             />
             <input
               name="phone-num-input"
@@ -62,6 +63,7 @@ function Order(props) {
               onChange={handleNumChange}
               type="tel"
               placeholder="Phone"
+              style={{ fontFamily: "Montserrat" }}
             />
             <button className="submitbtn" type="submit">
               Submit Order

@@ -84,34 +84,6 @@ function App() {
     );
   }
 
-  {
-    /*useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(`${BASE_URL}`).catch(handleError);
-      if (response.ok) {
-        const data = await response.json().catch(handleError);
-        setOrder(data);
-      }
-    }
-    fetchData();
-  }, []);
-
-  function addToOrder(item) {
-    const newOrder = { item, price }; //this is what it means to be an Order
-    const response = fetch(`${BASE_URL}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/JSON",
-      },
-      body: JSON.stringify(newOrder),
-    });
-    if (response.ok) {
-      const data =  response.json();
-      setOrder([...orders, data]);
-    }
-  }*/
-  }
-
   return (
     <div className="App">
       <header className="title">
