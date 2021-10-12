@@ -4,7 +4,7 @@ import MenuList from "./MENU/MenuList";
 import menuItems from "./UTILITIES/Menu.js";
 import Order from "./ORDER/Order";
 import formatPrice from "./UTILITIES/formatPrice";
-const BASE_URL = "https://django-restaurant-api-kattyeye.herokuapp.com";
+const BASE_URL = "https://django-restaurant-api-kattyeye.herokuapp.com/api_v1/";
 
 function App() {
   const [order, setOrder] = useState({ items: [], submitted: false });
@@ -13,7 +13,7 @@ function App() {
   async function addOrder(order, name, phoneNumber) {
     // this function allows us to add a new order to the api
     const newOrder = { order: order.items, name, phoneNumber }; // this is what it means to be an order
-    const response = await fetch(`${BASE_URL}`, {
+    const response = await fetch(`${BASE_URL}/orders/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,6 +30,20 @@ function App() {
       );
     }
   }
+
+  // async function fetchMenuItems(title, description, price) {
+  //   const newMenuItem = { title, description, price };
+  //   const response = await fetch(`${BASE_URL}/menu-items/`, {
+  //     method: "GET",
+  //   });
+  // }
+
+  let [menuItem, setMenuItem] = useState(null);
+  useEffect(() => {
+    fetch(`${BASE_URL}/menu-items/`)
+      .then((response) => response.json())
+      .then((data) => setMenuItem(data.message));
+  }, []);
 
   useEffect(() => {
     const storedOrder = JSON.parse(localStorage.getItem("order"));
@@ -51,7 +65,7 @@ function App() {
   if (selection === "menuScreen") {
     html = (
       <MenuList
-        menuItems={menuItems}
+        menuItem={menuItem}
         order={order}
         setOrder={setOrder}
         addOrder={addOrder}
