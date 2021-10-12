@@ -23,7 +23,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(./pizzaheader.jpg);
+  background-image: url(./pizzaheader.jpg) no-repeat;
   height: 400px;
   color: white;
   font-size: 65px;

@@ -4,7 +4,7 @@ import MenuList from "./MENU/MenuList";
 import menuItems from "./UTILITIES/Menu.js";
 import Order from "./ORDER/Order";
 import formatPrice from "./UTILITIES/formatPrice";
-const BASE_URL = "https://tiny-taco-server.herokuapp.com/debbies-pizza/";
+const BASE_URL = "https://django-restaurant-api-kattyeye.herokuapp.com";
 
 function App() {
   const [order, setOrder] = useState({ items: [], submitted: false });
