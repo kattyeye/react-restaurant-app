@@ -1,5 +1,9 @@
 // import menuItems from "../UTILITIES/Menu";
 import MenuItem from "./MenuItem";
+import Desserts from "./../images/cannoli.jpg";
+import Pizzas from "./../images/pizza.jpg";
+import Salads from "./../images/salad.jpg";
+import Beverages from "./../images/soda.jpg";
 
 function MenuList(props) {
   const menuItems = props.menuItems;
@@ -17,7 +21,7 @@ function MenuList(props) {
       });
     }
 
-    console.log(item);
+    console.log("item", item);
   }
 
   // let html = '';
@@ -32,35 +36,36 @@ function MenuList(props) {
   //       )
   //     })
   // })
-  const categories = {
-    Pizzas: {
-      path: "./pizza.jpg",
-      alt: "Cheese pizza surrounded by decorative garnish",
-    },
-    Salads: {
-      path: "./salad.jpg",
-      alt: "greens with goat cheese",
-    },
-    Desserts: {
-      path: "./salad.jpg",
-      alt: "cannolis",
-    },
-    Beverages: {
-      path: "./salad.jpg",
-      alt: "soda",
-    },
-  };
+  // const categories = {
+  //   Pizzas: {
+  //     path: "./pizza.jpg",
+  //     alt: "Cheese pizza surrounded by decorative garnish",
+  //   },
+  //   Salads: {
+  //     path: "./salad.jpg",
+  //     alt: "greens with goat cheese",
+  //   },
+  //   Desserts: {
+  //     path: "./salad.jpg",
+  //     alt: "cannolis",
+  //   },
+  //   Beverages: {
+  //     path: "./salad.jpg",
+  //     alt: "soda",
+  //   },
+  // };
 
-  console.log("menu items", menuItems);
+  // console.log("menu items", menuItems);
 
   const category = menuItems[0]?.category;
 
   console.log("category", category);
   return (
-    <div>
-      {category && (
-        <img src={categories[category].path} alt={categories[category].alt} />
-      )}
+    <div className="menu-items-img-section">
+      {category == "Beverages" && <img src={Beverages} alt="alt text here" />}
+      {category == "Desserts" && <img src={Desserts} alt="alt text here" />}
+      {category == "Salads" && <img src={Salads} alt="alt text here" />}
+      {category == "Pizzas" && <img src={Pizzas} alt="alt text here" />}
 
       {menuItems.map((menuItem) => {
         return (

@@ -18,12 +18,15 @@ h3 {
   text-transform: uppercase;
   font-size: 35px;
 }
+img {
+  width: 45%;
+}
 
 .title {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(/src/images/pizzaheader.jpg) no-repeat;
+  background: url(./images/pizzaheader.jpg);
   height: 400px;
   color: white;
   font-size: 65px;
@@ -39,6 +42,8 @@ h3 {
   display: flex;
   padding: 0;
 }
+
+/* }
 .menu-container {
   display: flex;
   flex-direction: row;
@@ -47,14 +52,14 @@ h3 {
 }
 .menu-container h2 {
   font-size: 40px;
-}
-
+} */
+/*
 .menu-images {
   width: 50%;
   height: 400px;
   margin: 30px;
   box-shadow: #eb5547 -20px 20px;
-}
+} */
 
 .menu-images img {
   width: 100%;
@@ -154,7 +159,7 @@ input {
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
-  .menu-container {
+  .menu-items-img-section {
     display: flex;
     flex-direction: column;
   }
@@ -171,4 +176,8 @@ input {
     margin: 0 auto;
     box-shadow: none;
   }
+}
+
+.menu-items-img-section {
+  max-width: 1200px;
 }

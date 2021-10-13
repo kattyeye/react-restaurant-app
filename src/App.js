@@ -13,7 +13,7 @@ function App() {
 
   async function addOrder(order, name, phoneNumber) {
     // this function allows us to add a new order to the api
-    const newOrder = { order, name, phoneNumber }; // this is what it means to be an order
+    const newOrder = { order, name, phone_number: phoneNumber }; // this is what it means to be an order
     const response = await fetch(`${BASE_URL}/orders/`, {
       method: "POST",
       headers: {
@@ -78,7 +78,7 @@ function App() {
 
   if (selection === "menuScreen") {
     html = (
-      <>
+      <div>
         <MenuList
           // menuItems={menuItems}
           menuItems={pizzas}
@@ -104,7 +104,7 @@ function App() {
           setOrder={setOrder}
           addOrder={addOrder}
         />
-      </>
+      </div>
     );
   } else if (selection === "orderScreen") {
     html = <Order order={order} setOrder={setOrder} addOrder={addOrder} />; // this is where the order state is being passed to Order comp.

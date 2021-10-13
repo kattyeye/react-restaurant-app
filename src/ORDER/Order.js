@@ -30,6 +30,7 @@ function Order(props) {
   function subtotal() {
     let total = 0;
     props.order.items.forEach((item) => {
+      console.log("type", item.title, typeof item.price);
       total = total + item.price;
     });
     console.log({ total });
