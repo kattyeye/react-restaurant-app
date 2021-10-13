@@ -74,7 +74,7 @@ function App() {
   const pizzas = menuItems.filter((item) => item.category === "Pizzas");
   const desserts = menuItems.filter((item) => item.category === "Desserts");
   const beverages = menuItems.filter((item) => item.category === "Beverages");
-  console.log("salads", salads);
+  console.log("Salads", salads);
 
   if (selection === "menuScreen") {
     html = (
