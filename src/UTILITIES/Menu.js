@@ -1,3 +1,7 @@
+// <MenuList category={'pizzas'} />
+
+// <img src={categories[props.category].path} />
+
 const menuItems = [
   {
     name: "Pizzas",
@@ -8,6 +12,7 @@ const menuItems = [
         description:
           "Pepperoni, our signature Old World Pepperoni®, romesan seasoning, our original sauce and signature three cheeses",
         price: 1000,
+        category: "Pizzas",
       },
 
       {

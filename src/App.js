@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import MenuList from "./MENU/MenuList";
-import menuItems from "./UTILITIES/Menu.js";
+// import menuItems from "./UTILITIES/Menu.js";
 import Order from "./ORDER/Order";
 import formatPrice from "./UTILITIES/formatPrice";
-const BASE_URL = "https://django-restaurant-api-kattyeye.herokuapp.com/api_v1/";
+const BASE_URL = "https://django-restaurant-api-kattyeye.herokuapp.com/api_v1";
 
 function App() {
   const [order, setOrder] = useState({ items: [], submitted: false });
   const [selection, setSelection] = useState("menuScreen");
+  const [menuItems, setMenuItems] = useState([]);
 
   async function addOrder(order, name, phoneNumber) {
     // this function allows us to add a new order to the api
@@ -38,11 +39,17 @@ function App() {
   //   });
   // }
 
-  let [menuItem, setMenuItem] = useState(null);
   useEffect(() => {
-    fetch(`${BASE_URL}/menu-items/`)
-      .then((response) => response.json())
-      .then((data) => setMenuItem(data.message));
+    async function fetchMenuItems() {
+      const response = await fetch(
+        `https://django-restaurant-api-kattyeye.herokuapp.com/api_v1/menu-items/`
+      );
+      const data = await response.json();
+      setMenuItems(data);
+      // .then((response) => response.json())
+      // .then((data) => setMenuItems(data));
+    }
+    fetchMenuItems();
   }, []);
 
   useEffect(() => {
@@ -62,14 +69,40 @@ function App() {
 
   let html;
 
+  const salads = menuItems.filter((item) => item.category === "Salads");
+  const pizzas = menuItems.filter((item) => item.category === "Pizzas");
+  const desserts = menuItems.filter((item) => item.category === "Desserts");
+  const beverages = menuItems.filter((item) => item.category === "Beverages");
+
   if (selection === "menuScreen") {
     html = (
-      <MenuList
-        menuItem={menuItem}
-        order={order}
-        setOrder={setOrder}
-        addOrder={addOrder}
-      />
+      <>
+        <MenuList
+          // menuItems={menuItems}
+          menuItems={pizzas}
+          order={order}
+          setOrder={setOrder}
+          addOrder={addOrder}
+        />
+        <MenuList
+          menuItems={salads}
+          order={order}
+          setOrder={setOrder}
+          addOrder={addOrder}
+        />
+        <MenuList
+          menuItems={desserts}
+          order={order}
+          setOrder={setOrder}
+          addOrder={addOrder}
+        />
+        <MenuList
+          menuItems={beverages}
+          order={order}
+          setOrder={setOrder}
+          addOrder={addOrder}
+        />
+      </>
     );
   } else if (selection === "orderScreen") {
     html = <Order order={order} setOrder={setOrder} addOrder={addOrder} />; // this is where the order state is being passed to Order comp.

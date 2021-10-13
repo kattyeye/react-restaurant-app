@@ -1,3 +1,4 @@
+// import menuItems from "../UTILITIES/Menu";
 import MenuItem from "./MenuItem";
 
 function MenuList(props) {
@@ -19,31 +20,50 @@ function MenuList(props) {
     console.log(item);
   }
 
+  // let html = '';
+
+  // // const categories = [...new Set(props.menuItems.map(item => item.category))];
+  // categories.map(category => {
+  //   props.menuItems
+  //     .filter(menuItem => menuItem.category === category)
+  //     .map(menuItem => {
+  //       html += (
+
+  //       )
+  //     })
+  // })
+  const categories = {
+    Pizzas: {
+      path: "public/pizza.jpg",
+      alt: "Cheese pizza surrounded by decorative garnish",
+    },
+    Salads: {
+      path: "public/salad.jpg",
+      alt: "greens with goat cheese",
+    },
+    Desserts: {
+      path: "public/salad.jpg",
+      alt: "cannolis",
+    },
+    Beverages: {
+      path: "public/salad.jpg",
+      alt: "soda",
+    },
+  };
+
+  const category = props.menuItems[0].category;
+
   return (
     <div>
-      {menuItems.map((category, index) => {
-        return (
-          <div key={index} className="menu-container">
-            <div className="menu-images">
-              <img
-                src={category.sectionImage.path}
-                alt={category.sectionImage.alt}
-              />
-            </div>
-            <div className="menu-text">
-              <h2>{category.name}</h2>
+      <img src={categories[category].path} alt={categories[category].alt} />
 
-              {category.menuItems.map((item, childIndex) => {
-                return (
-                  <MenuItem
-                    key={childIndex}
-                    item={item}
-                    onAdd={() => addToOrder(item)}
-                  />
-                );
-              })}
-            </div>
-          </div>
+      {menuItems.map((menuItem) => {
+        return (
+          <MenuItem
+            key={menuItem.id}
+            item={menuItem}
+            onAdd={() => addToOrder(menuItem)}
+          />
         );
       })}
     </div>
