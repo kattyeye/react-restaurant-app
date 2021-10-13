@@ -5,7 +5,7 @@ export default function MenuItem(props) {
 
   return (
     <div className="menu-item">
-      <h4>{item.name}</h4>
+      <h4>{item.title}</h4>
       <p>{item.description}</p>
       <p>{formatPrice(item.price)} </p>
 

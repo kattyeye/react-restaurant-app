@@ -34,19 +34,19 @@ function MenuList(props) {
   // })
   const categories = {
     Pizzas: {
-      path: "public/pizza.jpg",
+      path: "./pizza.jpg",
       alt: "Cheese pizza surrounded by decorative garnish",
     },
     Salads: {
-      path: "public/salad.jpg",
+      path: "./salad.jpg",
       alt: "greens with goat cheese",
     },
     Desserts: {
-      path: "public/salad.jpg",
+      path: "./salad.jpg",
       alt: "cannolis",
     },
     Beverages: {
-      path: "public/salad.jpg",
+      path: "./salad.jpg",
       alt: "soda",
     },
   };
@@ -54,6 +54,7 @@ function MenuList(props) {
   console.log("menu items", menuItems);
 
   const category = menuItems[0]?.category;
+
   console.log("category", category);
   return (
     <div>

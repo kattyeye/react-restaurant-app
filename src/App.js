@@ -13,7 +13,7 @@ function App() {
 
   async function addOrder(order, name, phoneNumber) {
     // this function allows us to add a new order to the api
-    const newOrder = { order: order, name, phoneNumber }; // this is what it means to be an order
+    const newOrder = { order, name, phoneNumber }; // this is what it means to be an order
     const response = await fetch(`${BASE_URL}/orders/`, {
       method: "POST",
       headers: {

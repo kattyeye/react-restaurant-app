@@ -5,7 +5,7 @@ function Order(props) {
   const orderHTML = props.order.items.map((item) => {
     return (
       <div>
-        <h4>{item.name}</h4>
+        <h4>{item.title}</h4>
         <p>{formatPrice(item.price)}</p>
       </div>
     );
