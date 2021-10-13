@@ -13,7 +13,7 @@ function App() {
 
   async function addOrder(order, name, phoneNumber) {
     // this function allows us to add a new order to the api
-    const newOrder = { order: order.items, name, phoneNumber }; // this is what it means to be an order
+    const newOrder = { order: order, name, phoneNumber }; // this is what it means to be an order
     const response = await fetch(`${BASE_URL}/orders/`, {
       method: "POST",
       headers: {
@@ -45,6 +45,7 @@ function App() {
         `https://django-restaurant-api-kattyeye.herokuapp.com/api_v1/menu-items/`
       );
       const data = await response.json();
+      console.log("data", data);
       setMenuItems(data);
       // .then((response) => response.json())
       // .then((data) => setMenuItems(data));
@@ -73,6 +74,7 @@ function App() {
   const pizzas = menuItems.filter((item) => item.category === "Pizzas");
   const desserts = menuItems.filter((item) => item.category === "Desserts");
   const beverages = menuItems.filter((item) => item.category === "Beverages");
+  console.log("salads", salads);
 
   if (selection === "menuScreen") {
     html = (

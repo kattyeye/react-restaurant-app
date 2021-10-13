@@ -51,15 +51,20 @@ function MenuList(props) {
     },
   };
 
-  const category = props.menuItems[0].category;
+  console.log("menu items", menuItems);
 
+  const category = menuItems[0]?.category;
+  console.log("category", category);
   return (
     <div>
-      <img src={categories[category].path} alt={categories[category].alt} />
+      {category && (
+        <img src={categories[category].path} alt={categories[category].alt} />
+      )}
 
       {menuItems.map((menuItem) => {
         return (
           <MenuItem
+            category={category}
             key={menuItem.id}
             item={menuItem}
             onAdd={() => addToOrder(menuItem)}
