@@ -61,23 +61,26 @@ function MenuList(props) {
 
   console.log("category", category);
   return (
-    <div className="menu-items-img-section">
-      {category == "Beverages" && <img src={Beverages} alt="alt text here" />}
-      {category == "Desserts" && <img src={Desserts} alt="alt text here" />}
-      {category == "Salads" && <img src={Salads} alt="alt text here" />}
-      {category == "Pizzas" && <img src={Pizzas} alt="alt text here" />}
-
-      {menuItems.map((menuItem) => {
-        return (
-          <MenuItem
-            category={category}
-            key={menuItem.id}
-            item={menuItem}
-            onAdd={() => addToOrder(menuItem)}
-          />
-        );
-      })}
-    </div>
+    <>
+      <div className="menu-items-img-section">
+        {category == "Beverages" && <img src={Beverages} alt="alt text here" />}
+        {category == "Desserts" && <img src={Desserts} alt="alt text here" />}
+        {category == "Salads" && <img src={Salads} alt="alt text here" />}
+        {category == "Pizzas" && <img src={Pizzas} alt="alt text here" />}
+        <div className="items-section">
+          {menuItems.map((menuItem) => {
+            return (
+              <MenuItem
+                category={category}
+                key={menuItem.id}
+                item={menuItem}
+                onAdd={() => addToOrder(menuItem)}
+              />
+            );
+          })}
+        </div>
+      </div>
+    </>
   );
 }
 

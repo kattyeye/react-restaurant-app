@@ -78,7 +78,7 @@ function App() {
 
   if (selection === "menuScreen") {
     html = (
-      <div>
+      <div className="items-container">
         <MenuList
           // menuItems={menuItems}
           menuItems={pizzas}
